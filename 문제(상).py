@@ -1,10 +1,10 @@
-# 링크드 리스트 노드
+#링크드 리스트 노드
 class Node:
     def __init__(self, elem, next=None):
         self.data = elem
         self.link = next
 
-# 연결 큐 클래스
+#연결 큐 클래스
 class ConnectedQueue:
     def __init__(self):
         self.front = None  # 큐의 전단
@@ -43,7 +43,7 @@ class ConnectedQueue:
             node = node.link
         return count
 
-    def __str__(self):
+    def str(self):
         arr = []
         node = self.front
         while node is not None:
@@ -51,29 +51,29 @@ class ConnectedQueue:
             node = node.link
         return str(arr)
 
-# 큐 인스턴스 생성
+#큐 인스턴스 생성
 queue = ConnectedQueue()
 
-# 큐가 비어 있는지 확인
+#큐가 비어 있는지 확인
 print(queue.is_empty())  # True
 
-# 큐에 원소 추가
+#큐에 원소 추가
 queue.enqueue(1)
 queue.enqueue(2)
 queue.enqueue(3)
 
-# 큐의 내용 출력
-print(queue.__str__())  # [1, 2, 3]
+#큐의 내용 출력
+print(f'큐의 현재 내용: {queue.str()}')  # [1, 2, 3]
 
-# 큐에서 원소 제거
-print(queue.dequeue())  # 1
-print(queue.dequeue())  # 2
+#큐에서 원소 제거
+print(f'제거 : {queue.dequeue()}')  # 1
+print(f'제거 : {queue.dequeue()}')  # 2
 
-# 큐의 내용 출력
-print(queue.__str__())  # [3]
+#큐의 내용 출력
+print(f'삭제 후 큐의 내용 : {queue.str()}')  # [3]
 
-# 큐의 크기 출력
-print(queue.size())  # 1
+#큐의 크기 출력
+print(f'큐의 크기 :{queue.size()}')  # 1
 
-# 큐가 비어 있는지 확인
-print(queue.is_empty())  # False
+#큐가 비어 있는지 확인
+print(f'큐가 비어 있는가? :{queue.is_empty()}')  # False
